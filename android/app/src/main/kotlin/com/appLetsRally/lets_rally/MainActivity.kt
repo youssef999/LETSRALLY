@@ -1,4 +1,4 @@
-package com.job777.lets_rally
+package com.appLetsRally.lets_rally
 
 import io.flutter.embedding.android.FlutterActivity
 

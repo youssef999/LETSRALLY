@@ -49,7 +49,13 @@ class ContactView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 22,),
+            Text('suggest'.tr),
+            const SizedBox(height: 12,),
+            Text('suggest2'.tr),
+
+            const SizedBox(height: 25,),
             Text("firstName".tr),
+            const SizedBox(height: 6,),
             CustomTextFormField(
               controller:firstNameController,
               obx:false,obs: false,color:Colors.black
@@ -62,6 +68,7 @@ class ContactView extends StatelessWidget {
 
             const SizedBox(height: 22,),
             Text("lastName".tr),
+            const SizedBox(height: 6,),
             CustomTextFormField(
               controller:lastNameController,
               obx:false,obs: false,color:Colors.black
@@ -72,6 +79,7 @@ class ContactView extends StatelessWidget {
             ),
             const SizedBox(height: 22,),
             Text("email".tr),
+            const SizedBox(height: 6,),
             CustomTextFormField(
               controller:emailController,
               obx:false,obs: false,color:Colors.black
@@ -84,6 +92,7 @@ class ContactView extends StatelessWidget {
 
             const SizedBox(height: 22,),
             Text("subject".tr),
+            const SizedBox(height: 6,),
             CustomTextFormField(
               controller:subController,
               obx:false,obs: false,color:Colors.black
@@ -95,6 +104,7 @@ class ContactView extends StatelessWidget {
 
             const SizedBox(height: 22,),
             Text("msg".tr),
+            const SizedBox(height: 6,),
             CustomTextFormField(
               max: 6,
               controller:msgController,

@@ -9,7 +9,6 @@ class LocaleController extends GetxController{
     Locale currentLocal=Locale(codeLang);
     Get.updateLocale(currentLocal);
     box.write('locale', codeLang);
-
   }
 
 }

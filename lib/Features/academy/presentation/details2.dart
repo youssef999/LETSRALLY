@@ -1,6 +1,6 @@
 
 
- import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_app/Core/resources/color_manager.dart';
@@ -10,10 +10,10 @@ import 'package:shop_app/Core/widgets/custom_app_bar.dart';
 
 import '../../register/presentation/views/register_view.dart';
 
-class AcademyDetailsView extends StatelessWidget {
+class AcademyDetailsView2 extends StatelessWidget {
   DocumentSnapshot posts;
 
-   AcademyDetailsView({super.key,required this.posts});
+  AcademyDetailsView2({super.key,required this.posts});
 
   @override
   Widget build(BuildContext context) {
@@ -28,24 +28,24 @@ class AcademyDetailsView extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                   color:Colors.black,
-                borderRadius:BorderRadius.circular(33)
+                  borderRadius:BorderRadius.circular(33)
               ),
               //height: 300,
-            //  width:200,
+              //  width:200,
               height: 321,
               child:Padding(
                 padding: const EdgeInsets.all(12.0),
                 child: Image.network(posts['image'],
-                fit: BoxFit.fill,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
           ),
           const SizedBox(height: 21,),
           Custom_Text(text: posts['name'],
-          fontWeight:FontWeight.bold,
-          color:ColorsManager.textColorDark,
-          fontSize:26,alignment:Alignment.center,
+            fontWeight:FontWeight.bold,
+            color:ColorsManager.textColorDark,
+            fontSize:26,alignment:Alignment.center,
           ),
           const SizedBox(height: 13,),
           // (posts['details']==null)?
@@ -58,7 +58,7 @@ class AcademyDetailsView extends StatelessWidget {
           // ):
           Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Custom_Text(text: posts['details'],
+            child: Custom_Text(text: posts['des'],
               color:ColorsManager.textColorDark,
               fontSize:18,alignment:Alignment.center,
             ),

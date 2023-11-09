@@ -4,6 +4,7 @@
  import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:shop_app/Core/widgets/Custom_Text.dart';
 import 'package:shop_app/Core/widgets/custom_app_bar.dart';
 
@@ -36,10 +37,15 @@ class AboutUsView extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text('aboutTxt'.tr,
                 textDirection:TextDirection.ltr,
-                style:const TextStyle(
-                    fontSize: 16,
-                    fontWeight:FontWeight.w700
-                ),
+                 style: GoogleFonts.tajawal(
+                  color:Colors.black,fontSize: 16,fontWeight: FontWeight.w500,
+                  textBaseline: TextBaseline.alphabetic
+              )
+
+                // const TextStyle(
+                //     fontSize: 16,
+                //     fontWeight:FontWeight.w700
+                // ),
               ),
             ),
           ],),

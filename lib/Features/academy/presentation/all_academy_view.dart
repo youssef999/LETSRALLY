@@ -24,8 +24,8 @@ class AllAcademyView extends StatelessWidget {
       )
     );
   }
-  Widget AcademyWidget() {
 
+  Widget AcademyWidget() {
     final controller=Get.put(HomeController());
     return StreamBuilder(
         stream: FirebaseFirestore.instance.collection('academy').snapshots(),
@@ -70,7 +70,7 @@ class AllAcademyView extends StatelessWidget {
    @override
    Widget build(BuildContext context) {
      return Padding(
-       padding: const EdgeInsets.only(left:4.0,right: 4),
+       padding: const EdgeInsets.only(left:30.0,right: 30),
        child: SizedBox(
          child: Column(
            children: [
@@ -121,13 +121,13 @@ class AllAcademyView extends StatelessWidget {
                                          children: [
                                            Custom_Text(
                                              text: posts['name'],
-                                             fontSize: 17,
+                                             fontSize: 25,
                                              alignment:Alignment.center,
                                              color: ColorsManager.textColorDark,
                                              fontWeight: FontWeight.w800,
                                            ),
                                            const SizedBox(
-                                             height: 8,
+                                             height: 18,
                                            )
                                          ],
                                        ),
@@ -148,6 +148,7 @@ class AllAcademyView extends StatelessWidget {
                  ),
                ),
                onTap: () {
+
                  Get.to(AcademyDetailsView(
                    posts: posts,
                  ));

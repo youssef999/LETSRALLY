@@ -7,6 +7,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:963846470302:android:8bb3b284ebf2256105d98f",
+        "android_client_info": {
+          "package_name": "com.appLetsRally.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "963846470302-vf4r0l73hs16n93k1t9ilb0390bud6lo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB03DiB8ZDBeLDAqiYUOiY5zenhdxsLWtE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "963846470302-vf4r0l73hs16n93k1t9ilb0390bud6lo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:963846470302:android:22a9e929bbd3f67705d98f",
         "android_client_info": {
           "package_name": "com.job777.school"

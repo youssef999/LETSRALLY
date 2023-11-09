@@ -172,7 +172,7 @@ Widget productWidget() {
   final HomeController controller = Get.find();
 
   return SizedBox(
-    height: 300,
+    height: 400,
     child: StreamBuilder(
         stream: FirebaseFirestore.instance.collection('academy').snapshots(),
         builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {

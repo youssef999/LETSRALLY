@@ -1,12 +1,10 @@
-
-
- import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop_app/Core/resources/color_manager.dart';
 import 'package:shop_app/Core/widgets/Custom_Text.dart';
 import 'package:shop_app/Core/widgets/custom_app_bar.dart';
-
+import 'package:shop_app/Features/academy/presentation/details2.dart';
 import '../Home/presentation/manager/home_controller.dart';
 import '../academy/presentation/academy_details_view.dart';
 
@@ -17,18 +15,30 @@ class ServiceCatView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor:Colors.grey[200],
-      appBar:CustomAppBar('', true, 44),
-      body:
-      (cat=='academy')?
-      AcademyWidget():  Center(
-        child: Custom_Text(text: 'soon'.tr,
-          fontSize: 33,
-        ),
-      )
-    );
+
+    if(cat=='academy'){
+      return Scaffold(
+          backgroundColor:Colors.grey[200],
+          appBar:CustomAppBar('', true, 44),
+          body: AcademyWidget()
+      );
+    }else if(cat=='school'){
+      return Scaffold(
+          backgroundColor:Colors.grey[200],
+          appBar:CustomAppBar('', true, 44),
+          body: SchoolWidget()
+      );
+    }else{
+      return Scaffold(
+          backgroundColor:Colors.grey[200],
+          appBar:CustomAppBar('', true, 44),
+          body: NurseryWidget()
+      );
+    }
+
   }
+
+  //
   Widget AcademyWidget() {
 
     final controller=Get.put(HomeController());
@@ -43,7 +53,7 @@ class ServiceCatView extends StatelessWidget {
               return const Center(child: CircularProgressIndicator());
             default:
               return ListView.builder(
-                //  scrollDirection: Axis.horizontal,
+
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index) {
                     DocumentSnapshot posts = snapshot.data!.docs[index];
@@ -53,9 +63,95 @@ class ServiceCatView extends StatelessWidget {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: ProductWidget(
+                          cat: cat,
                           posts: posts, index: index, controller: controller),
                     );
+                    // },   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    //       crossAxisCount: 2,
+                    //       crossAxisSpacing: 2,
+                    //       mainAxisSpacing: 3,
+                    //       childAspectRatio:0.70
+                    //   ),
                   });
+          }
+        });
+  }
+
+  Widget NurseryWidget() {
+
+    final controller=Get.put(HomeController());
+    return StreamBuilder(
+        stream: FirebaseFirestore.instance.collection('school')
+            .where('cat',isEqualTo:'nur')
+            .snapshots(),
+        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          switch (snapshot.connectionState) {
+            case ConnectionState.waiting:
+              return const Center(child: CircularProgressIndicator());
+            default:
+              return ListView.builder(
+
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: (context, index) {
+                  DocumentSnapshot posts = snapshot.data!.docs[index];
+                  if (snapshot.data == null) {
+                    return const CircularProgressIndicator();
+                  }
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ProductWidget(
+                        cat: cat,
+                        posts: posts, index: index, controller: controller),
+                  );
+                  //   },   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  //     crossAxisCount: 2,
+                  //     crossAxisSpacing: 2,
+                  //     mainAxisSpacing: 3,
+                  //     childAspectRatio:1.1
+                  // ),
+                });
+          }
+        });
+  }
+
+  Widget SchoolWidget() {
+    final controller=Get.put(HomeController());
+    return StreamBuilder(
+        stream: FirebaseFirestore.instance.collection('school')
+            .where('cat',isNotEqualTo:'nur')
+            .snapshots(),
+        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData) {
+            return const Center(child: CircularProgressIndicator());
+          }
+          switch (snapshot.connectionState) {
+            case ConnectionState.waiting:
+              return const Center(child: CircularProgressIndicator());
+            default:
+              return ListView.builder(
+
+                itemCount: snapshot.data!.docs.length,
+                itemBuilder: (context, index) {
+                  DocumentSnapshot posts = snapshot.data!.docs[index];
+                  if (snapshot.data == null) {
+                    return const CircularProgressIndicator();
+                  }
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ProductWidget(
+                        cat: cat,
+                        posts: posts, index: index, controller: controller),
+                  );
+                  //   },   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  //     crossAxisCount: 2,
+                  //     crossAxisSpacing: 2,
+                  //     mainAxisSpacing: 3,
+                  //     childAspectRatio:1.1
+                  // ),
+                });
           }
         });
   }
@@ -65,17 +161,20 @@ class ServiceCatView extends StatelessWidget {
  class ProductWidget extends StatelessWidget {
    final DocumentSnapshot posts;
    final int index;
+   String cat;
    final HomeController controller;
-   const ProductWidget(
+
+   ProductWidget(
        {super.key,
          required this.posts,
          required this.index,
+         required this.cat,
          required this.controller});
 
    @override
    Widget build(BuildContext context) {
      return Padding(
-       padding: const EdgeInsets.only(left:4.0,right: 4),
+       padding: const EdgeInsets.only(left:34.0,right: 34),
        child: SizedBox(
          child: Column(
            children: [
@@ -153,9 +252,17 @@ class ServiceCatView extends StatelessWidget {
                  ),
                ),
                onTap: () {
-                 Get.to(AcademyDetailsView(
-                   posts: posts,
-                 ));
+
+                 if(cat=='academy'){
+                    Get.to(AcademyDetailsView(
+                     posts: posts,
+                   ));
+                 }else{
+                   Get.to(AcademyDetailsView2(
+                     posts: posts,
+                   ));
+                 }
+
                  //  Get.to(ProductDetailsView(posts: posts, tag: 'img$index'));
                },
              ),

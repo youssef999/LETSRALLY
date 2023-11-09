@@ -8,8 +8,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:shop_app/Core/widgets/Custom_Text.dart';
 import 'package:shop_app/Core/widgets/custom_app_bar.dart';
 
-class TermsView extends StatelessWidget {
-  const TermsView ({super.key});
+class PrivacyView extends StatelessWidget {
+  const PrivacyView ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,33 +23,33 @@ class TermsView extends StatelessWidget {
         body:ListView(
 
           children: [
-          // const SizedBox(height: 22,),
-          // SizedBox(
-          //   height: 140,
-          //   child:Image.asset('assets/images/logo.jpg'),
-          // ),
-          const SizedBox(height: 20,),
-          // const Divider(
-          //   color:Colors.black,
-          // ),
-          const SizedBox(height: 10,),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text('termsTxt'.tr,
-            textDirection:TextDirection.ltr,
-                style: GoogleFonts.tajawal(
-                    color:Colors.black,fontSize: 16,fontWeight: FontWeight.w500,
-                    textBaseline: TextBaseline.alphabetic
-                )
+            // const SizedBox(height: 22,),
+            // SizedBox(
+            //   height: 140,
+            //   child:Image.asset('assets/images/logo.jpg'),
+            // ),
+            const SizedBox(height: 20,),
+            // const Divider(
+            //   color:Colors.black,
+            // ),
+            const SizedBox(height: 10,),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text('privacyP'.tr,
+                  textDirection:TextDirection.ltr,
+                  style: GoogleFonts.tajawal(
+                      color:Colors.black,fontSize: 16,fontWeight: FontWeight.w500,
+                      textBaseline: TextBaseline.alphabetic
+                  )
+              ),
             ),
-          ),
-          // Custom_Text(text:
-          // 'termsTxt'.tr,
-          //   fontSize: 18,
-          //   color:Colors.black,
-          //   alignment: Alignment.topLeft,
-          // )
-        ],),
+            // Custom_Text(text:
+            // 'termsTxt'.tr,
+            //   fontSize: 18,
+            //   color:Colors.black,
+            //   alignment: Alignment.topLeft,
+            // )
+          ],),
       );
     }else{
       return  Scaffold(
@@ -70,7 +70,7 @@ class TermsView extends StatelessWidget {
             const SizedBox(height: 10,),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text('termsTxt'.tr,
+              child: Text('privacyP'.tr,
                 textDirection:TextDirection.ltr,
                 style:const TextStyle(
                     fontSize: 16,

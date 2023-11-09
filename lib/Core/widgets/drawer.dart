@@ -4,6 +4,7 @@ import 'package:get_storage/get_storage.dart';
 import 'package:shop_app/Features/about_drawer/about_us_view.dart';
 import 'package:shop_app/Features/profile/views/profile_view.dart';
 import '../../Features/about_drawer/contact.dart';
+import '../../Features/about_drawer/privacy.dart';
 import '../../Features/about_drawer/terms_view.dart';
 import '../../Features/profile/views/translate_view.dart';
 import '../../Features/splash/splash_view.dart';
@@ -66,6 +67,18 @@ class _MainDrawerState extends State<MainDrawer> {
                     },
                   ),
                   const SizedBox(height: 16,),
+
+                  //PrivacyView
+                  InkWell(
+                    child: drawerItemWidget(
+                        image: 'assets/images/privacy.jpeg',
+                        txt: 'privacyPolicy'.tr
+                    ),
+                    onTap:(){
+                      Get.to(const PrivacyView());
+                    },
+                  ),
+                  const SizedBox(height: 16,),
                   InkWell(
                     child: drawerItemWidget(
                         image: 'assets/images/terms.jpeg',
@@ -75,6 +88,10 @@ class _MainDrawerState extends State<MainDrawer> {
                       Get.to(const TermsView());
                     },
                   ),
+
+
+
+
                   const SizedBox(height: 16,),
                   InkWell(
                     child: drawerItemWidget(

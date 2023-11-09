@@ -230,6 +230,12 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "flutter_svg",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/flutter_svg-2.0.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///Users/apple/Desktop/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -290,6 +296,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "line_icons",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/line_icons-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "lints",
       "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/lints-2.1.1",
       "packageUri": "lib/",
@@ -322,6 +334,12 @@
     {
       "name": "path",
       "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/path-1.8.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "path_parsing",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/path_parsing-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -482,6 +500,24 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "vector_graphics",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/vector_graphics-1.1.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_graphics_codec",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/vector_graphics_codec-1.1.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.17"
+    },
+    {
+      "name": "vector_graphics_compiler",
+      "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/vector_graphics_compiler-1.1.9",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "vector_math",
       "rootUri": "file:///Users/apple/.pub-cache/hosted/pub.dev/vector_math-2.1.4",
       "packageUri": "lib/",
@@ -530,7 +566,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-10-21T16:16:33.408683Z",
+  "generated": "2023-11-09T00:48:48.602194Z",
   "generator": "pub",
   "generatorVersion": "3.1.0"
 }

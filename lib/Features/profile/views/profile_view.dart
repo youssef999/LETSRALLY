@@ -1,7 +1,8 @@
 
 
 
- import 'package:flutter/material.dart';
+ import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:shop_app/Core/resources/color_manager.dart';
@@ -69,6 +70,16 @@ class ProfileView extends StatelessWidget {
           },
           ),
 
+          InkWell(
+            child: ProfileCardWidget(
+                icon:Icons.delete,
+                txt: 'deleteAccount'.tr
+            ),onTap:() {
+            showDialog();
+
+          },
+          ),
+
         ],
       ),
     );
@@ -98,5 +109,39 @@ class ProfileView extends StatelessWidget {
         ),
       ),
     );
+  }
+
+
+  showDialog(){
+    return  Get.defaultDialog(
+      title: "sureToDelete".tr,
+      middleText: "",
+      onConfirm: () {
+        DeleteUserAccount();
+        Get.back();
+      },
+      onCancel: () {
+        Get.back();
+      },
+      textCancel: "no".tr,
+      textConfirm: "yes".tr,
+      cancelTextColor: Colors.black,
+      buttonColor: ColorsManager.primary,
+      confirmTextColor: Colors.white,
+      barrierDismissible: true,
+      //middleText: "Hello world!",
+      backgroundColor: Colors.white,
+      titleStyle: const TextStyle(color: Colors.black),
+      middleTextStyle: const TextStyle(color: Colors.white),
+    );
+  }
+
+  DeleteUserAccount(){
+    final box=GetStorage();
+    box.remove('email');
+    User? currentUser = FirebaseAuth.instance.currentUser;
+    currentUser!.delete();
+    Get.offAll(const SplashView());
+
   }
 }

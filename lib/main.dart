@@ -6,24 +6,19 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:shop_app/Core/loalization/locale_controller.dart';
 import 'package:shop_app/Core/resources/color_manager.dart';
 import 'package:shop_app/Core/resources/strings_manager.dart';
-import 'package:shop_app/Features/auth/presentation/views/login_view.dart';
 import 'Core/loalization/locale.dart';
-import 'Features/Home/presentation/views/main_home.dart';
 import 'Features/splash/splash_view.dart';
 
 
 
-void main()async {
+ void main()async {
 
   WidgetsFlutterBinding.ensureInitialized();
-
   await GetStorage.init();
-
   await Firebase.initializeApp();
-
   runApp(const MyApp());
 
-}
+ }
 
 
  class MyApp extends StatelessWidget {
@@ -42,9 +37,7 @@ void main()async {
     Locale lang = const Locale('en');
 
     if(keylocal!='x'){
-
       lang=Locale(keylocal);
-
       // box.write('locale', 'en');
     }
 
